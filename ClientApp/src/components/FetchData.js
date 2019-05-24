@@ -7,7 +7,7 @@ import { actionCreators } from '../store/WeatherForecasts';
 class FetchData extends Component {
   componentDidMount() {
     // This method is called when the component is first added to the document
-    this.ensureDataFetched();
+    this.ensureDataFetched(); 
   }
 
   componentDidUpdate() {

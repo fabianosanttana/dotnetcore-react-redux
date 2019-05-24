@@ -1,7 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 namespace WeRentCar.Entities {
     public class Car {
-        [Key]
         public int CarID { get; set; }
         public string Brand { get; set; }
         public bool Available { get; set; }

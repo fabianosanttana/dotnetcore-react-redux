@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WeRentCar.Data.EntityConfig;
 using WeRentCar.Entities;
 
 namespace WeRentCar.Data {
@@ -21,10 +22,21 @@ namespace WeRentCar.Data {
         public DbSet<Car> Cars { get; set; }
         public DbSet<Reservation> Reservation { get; set; }
 
-        protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder) {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
             // Specify the path of the database here
-            optionsBuilder.UseSqlite ("Filename=./database.sqlite");
-            base.OnConfiguring (optionsBuilder);
+            optionsBuilder.UseSqlite("Filename=./database.sqlite");
+            base.OnConfiguring(optionsBuilder);
         }
+
+        //Esta linha é usada para alterar a convenção da criação de tabelas no comando update-Database -Verbose, o entity por padrão cria os campos errados
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Method responsible for adding class configuration to project startup
+            modelBuilder.ApplyConfiguration(new CustomerConfiguration());
+            modelBuilder.ApplyConfiguration(new CarConfiguration());
+            modelBuilder.ApplyConfiguration(new ReservationConfiguration());
+        }
+
     }
 }
