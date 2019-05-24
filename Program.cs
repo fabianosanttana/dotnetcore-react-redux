@@ -9,9 +9,6 @@ namespace WeRentCar
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
-
-            // Create the database if it does not exist
-            new DatabaseContext().Database.EnsureCreated();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
