@@ -1,7 +1,7 @@
 ﻿import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
-import { actionCreators } from '../../store/Customer';
+import { actionCreators } from '../../../store/Customer';
 
 class Form extends Component {
   handleSubmit = e => {
@@ -18,7 +18,6 @@ class Form extends Component {
       Email,
       PhoneNumber,
       SSN,
-      isEditing: false
     };
 
     this.props.addCustomer(data);

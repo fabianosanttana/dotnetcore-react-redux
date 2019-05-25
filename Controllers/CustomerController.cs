@@ -37,5 +37,22 @@ namespace WeRentCar.Controllers
             await _db.SaveChangesAsync();
             return CreatedAtAction(nameof(GetById), new { id = _customer.CustomerID }, _customer);
         }
+
+        [HttpPut("UpdateCustomer")]
+        public async Task<ActionResult<Customer>> UpdateCustomer([FromBody]Customer _customer)
+        {
+            _db.Update<Customer>(_customer);
+            await _db.SaveChangesAsync();
+            return Ok(_customer);
+        }
+
+        [HttpDelete("DeleteCustomer/{id}")]
+        public async Task<ActionResult<Customer>> DeleteCustomer(int id)
+        {
+            var _customer = (from obj in _db.Customers where obj.CustomerID == id select obj).FirstOrDefault();
+            _db.Remove<Customer>(_customer);
+            await _db.SaveChangesAsync();
+            return Ok();
+        }
     }
 }

@@ -3,13 +3,12 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import CustomerItem from "./CustomerItem";
 import EditComponent from "./EditComponent";
-import { actionCreators } from "../../store/Customer";
+import { actionCreators } from "../../../store/Customer";
 
 class AllCustomers extends Component {
   componentDidMount() {
     this.props.requestCustomers();
-    console.log(this.props.customers);
-  }
+  } 
   render() {
     return (
       <div className="customer-container">
