@@ -2,10 +2,16 @@
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../../store/Car";
+import Modal from 'react-bootstrap/Modal'
+import ModalRentCar from './ModalRent';
 
 class CarItem extends Component {
+  state = {
+    modalShow: false
+  }
+
   render() {
-    debugger;
+    let modalClose = () => this.setState({ modalShow: false });
     return (
       <div className="customer">
         <ul className="customer_info">
@@ -22,6 +28,12 @@ class CarItem extends Component {
               this.props.editCar(this.props.car.carID)
             }
           >
+            Rent Car
+          </button>
+          <button
+            className="rent"
+            onClick={() => this.setState({ modalShow: true })}
+          >
             Edit
           </button>
           <button
@@ -33,6 +45,11 @@ class CarItem extends Component {
             Delete
           </button>
         </div>
+        <ModalRentCar
+          car={this.props.car}
+          show={this.state.modalShow}
+          onHide={modalClose}
+        />
       </div>
     );
   }

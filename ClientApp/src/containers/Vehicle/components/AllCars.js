@@ -14,7 +14,7 @@ class AllCars extends Component {
   render() {
     return (
       <div className="customer-container">
-        <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+        <Tabs defaultActiveKey="available" id="uncontrolled-tab-example">
           <Tab eventKey="available" title="Available">
             <h1 className="customer_heading">
               All Cars Available <span>{this.props.cars.length}</span>

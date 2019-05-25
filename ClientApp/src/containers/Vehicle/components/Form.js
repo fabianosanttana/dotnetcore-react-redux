@@ -12,7 +12,7 @@ class Form extends Component {
     const Color = this.getColor.value;
     const DailyPrice = this.getDailyPrice.value;
     const Notes = this.getNotes.value;
-    const Availeble = true;
+    const Available = true;
     const data = {
       Brand,
       Model,
@@ -20,7 +20,7 @@ class Form extends Component {
       Color,
       DailyPrice,
       Notes,
-      Availeble
+      Available
     };
 
     this.props.addCar(data);

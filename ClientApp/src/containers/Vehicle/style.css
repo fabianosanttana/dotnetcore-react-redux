@@ -127,3 +127,15 @@
         outline: none;
         color: #fff;
     }
+    .rent {
+        background: #f1f2f1;;
+        border: none;
+        text-align: center;
+        font-size: 20px;
+        padding: 10px 25px;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-right: auto;
+        outline: none;
+        color: #252525;
+    }
