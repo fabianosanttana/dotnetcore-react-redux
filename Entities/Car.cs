@@ -9,6 +9,6 @@ namespace WeRentCar.Entities {
         public string Color { get; set; }
         public double DailyPrice { get; set; }
         public string Model { get; set; }
-        public int RentedDays { get; set; }
+        public double RentedDays { get; set; }
     }
 }

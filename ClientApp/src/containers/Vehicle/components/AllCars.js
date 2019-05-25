@@ -5,11 +5,12 @@ import CarItem from "./CarItem";
 import EditComponent from "./EditComponent";
 import { actionCreators } from "../../../store/Car";
 import Tabs from "react-bootstrap/Tabs";
-import Tab from 'react-bootstrap/Tab';
+import Tab from "react-bootstrap/Tab";
 
 class AllCars extends Component {
   componentDidMount() {
     this.props.requestCars();
+    this.props.requestRentalCars();
   }
   render() {
     return (
@@ -30,7 +31,14 @@ class AllCars extends Component {
             ))}
           </Tab>
           <Tab eventKey="rental" title="Rental">
-            <h1>oi</h1>
+            <h1 className="customer_heading">
+              All Rental Cars <span>{this.props.rentalcars.length}</span>
+            </h1>
+            {this.props.rentalcars.map(car => (
+              <div key={car.carID}>
+                <CarItem car={car} key={car.carID} />
+              </div>
+            ))}
           </Tab>
         </Tabs>
       </div>

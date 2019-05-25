@@ -26,7 +26,7 @@ class EditComponent extends Component {
       Notes
     };
 
-    this.props.addCar(data);
+    this.props.updateCar(data);
     this.getYear.value = "";
     this.getModel.value = "";
     this.getBrand.value = "";

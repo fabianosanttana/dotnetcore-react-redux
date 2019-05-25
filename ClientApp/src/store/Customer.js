@@ -12,7 +12,6 @@ const initialState = { customers: [], isLoading: false };
 export const actionCreators = {
   requestCustomers: () => async (dispatch, getState) => {
     dispatch({ type: requestAllCustomers });
-
     const url = `/Customer/GetCustomer`;
     const response = await api.get(url);
     const { data } = response;
