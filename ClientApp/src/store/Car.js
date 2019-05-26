@@ -46,7 +46,7 @@ export const actionCreators = {
     else console.error(response.statusText);
   },
   returnCar: car => async (dispatch, getState) => {
-    debugger;
+    
     const url = `/Reservation/ReturnCar`;
     const response = await api.put(url, car);
     const { data } = response;
@@ -72,7 +72,7 @@ export const actionCreators = {
 };
 
 export const reducer = (state, action) => {
-  debugger;
+  
   state = state || initialState;
   switch (action.type) {
     case requestAllCars:

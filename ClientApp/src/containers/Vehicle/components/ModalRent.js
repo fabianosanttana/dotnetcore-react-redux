@@ -30,7 +30,7 @@ class ModalRentCar extends React.Component {
       CustomerID,
       Amount
     };
-    debugger;
+    
     this.props.onHide();
     confirmAlert({
       title: "Confirm to submit",

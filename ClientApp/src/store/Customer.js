@@ -31,7 +31,6 @@ export const actionCreators = {
   updateCustomer: obj => async (dispatch, getState) => {
     const url = `/Customer/UpdateCustomer`;
     const response = await api.put(url, obj);
-    console.log(response);
     const { data } = response;
     if (response.status === 200) dispatch({ type: updateCustomer, data });
     else console.error(response.statusText);
