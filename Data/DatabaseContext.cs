@@ -10,7 +10,7 @@ namespace WeRentCar.Data {
         private static bool _created = false;
         public DatabaseContext () {
             if (!_created) {
-                //Database.EnsureDeleted ();
+                Database.EnsureDeleted ();
                 Database.EnsureCreated ();
                 _created = true;
             }
