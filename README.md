@@ -14,7 +14,8 @@ git clone https://github.com/fabianosanttana/dotnetcore-react-redux.git
 
 ## Usage
 
-```dotnet run
+```
+dotnet run
 ```
 
 ## Dependencies
@@ -22,3 +23,4 @@ git clone https://github.com/fabianosanttana/dotnetcore-react-redux.git
 * [ReactJS](https://reactjs.org/)
 * [JavaScript/es6](http://github.com/DrkSephy/es6-cheatsheet)
 * [SASS](http://github.com/sass/sass)
+* [.NET Core](https://dotnet.microsoft.com/download)
